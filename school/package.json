@@ -1,0 +1,14 @@
+{
+  "name": "kh-group-of-schools",
+  "version": "0.0.0",
+  "description": "KH GROUP OF SCHOOLS",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "eslintConfig": {
+  }
+}

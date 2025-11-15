@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>KH Group of Schools</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bitter:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Didact+Gothic&family=Great+Vibes&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sacramento&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body ng-app="classrooms" ng-controller="classrooms_controller">
+
+  <div class="images_owner" id="images_owner">
+    <!-- Navigation Bar -->
+  <div class="welcome_body">
+    <div class="logo_area">
+      <p><span style="font-size:18px; font-weight: bold;">KH Schools of Excellence<br>
+        <span style="font-size:12px">Education | Character | Leadership</span>
+      </p>
+    </div>
+    <div class="nav_area">
+      <!-- About Us -->
+      <div class="nav_area_item_container">
+        <div class="nav_area_item"  onclick="window.location.href='../index.html'">
+          <p class="nav_area_item_def">Home</p>
+        </div>
+      </div>
+      <div class="nav_area_item_container">
+        <div class="nav_area_item">
+          <p class="nav_area_item_def">About us</p>
+          <img src="../Drawables/drop_down.png" class="drop_down_button">
+        </div>
+        <div class="chatbox">
+          <div class="chatbox_sub" onclick="window.location.href='../index.html?action=scrollToHistory'"><p>Brief History of the school</p></div><br>
+          <div class="chatbox_sub"  onclick="window.location.href='../index.html?action=scrollToManagingCommittee'"><p>Managing Committee</p></div><br>
+          <div class="chatbox_sub" onclick="window.location.href='../index.html?action=scrollToStrategicStatements'"><p>Strategic Statements</p></div><br>
+          <div class="chatbox_sub" onclick="window.location.href='../index.html?action=scrollToContactUs'"><p>Contact us</p>
+        </div>
+      </div>
+      </div>
+
+      <!-- Admissions -->
+      <div class="nav_area_item_container">
+        <div class="nav_area_item">
+          <p class="nav_area_item_def">Academics</p>
+          <img src="../Drawables/drop_down.png" class="drop_down_button">
+        </div>
+        <div class="chatbox">
+          <div class="chatbox_sub"><p>Notices & Circulars</p></div>
+        </div>
+      </div>
+
+      <!-- Facilities -->
+      <div class="nav_area_item_container">
+        <div class="nav_area_item">
+          <p class="nav_area_item_def">Facilities</p>
+          <img src="../Drawables/drop_down.png" class="drop_down_button">
+        </div>
+        <div class="chatbox">
+            <div class="chatbox_sub" onclick="setLocation('campus', 'classrooms.html')"><p>Campus</p></div><br>
+          <div class="chatbox_sub" onclick="setLocation('classrooms', 'classrooms.html')"><p>Smart Classrooms</p></div><br>
+          <div class="chatbox_sub" onclick="setLocation('laboratories', 'classrooms.html')"><p>Laboratories</p></div><br>
+          <div class="chatbox_sub" onclick="setLocation('libraries', 'classrooms.html')"><p>Library</p></div>
+        </div>
+      </div>
+
+      <!-- News & Events -->
+      <div class="nav_area_item_container">
+        <div class="nav_area_item">
+          <p class="nav_area_item_def">Login</p>
+          <img src="../Drawables/drop_down.png" class="drop_down_button">
+        </div>
+        <div class="chatbox">
+          <div class="chatbox_sub"><p>Admin Login</p></div>
+        </div>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="nav_area_item_container">
+        <div class="chatbox">
+          <div class="chatbox_sub"><p>Phone & Email</p></div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    </div>
+     <div class="pictures" >
+             <img ng-repeat="picture in classPictures" ng-src="{{picture}}" >    
+        </div>
+
+   
+  </div>
+  <div class="image_viewer" id="image_viewer">
+      <div class="close-button" ng-click="hideImageViewer()">
+          <img src="../Drawables/closer.png" />
+      </div>
+      <div class="image_wrapper">
+
+          <div class="left_arrow_container" ng-click="goLeft()">
+              <div class="left_arrow">❮</div>
+          </div>
+
+          <img src="../Drawables/Campus/1.jpeg" id="focused_image">
+
+          <div class="right_arrow_container" ng-click="goRight()">
+              <div class="right_arrow">❯</div>
+          </div>
+      </div>
+
+  </div>
+ 
+
+
+  <!-- Scripts -->
+  <script src="../Scripts/ang.js"></script>
+  <script src="../Scripts/jquery.js"></script>
+  <script src="../script.js"></script>
+  
+</body>
+</html>

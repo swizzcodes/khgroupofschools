@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>KH Group of Schools</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bitter:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Didact+Gothic&family=Great+Vibes&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sacramento&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body ng-app="admin" ng-controller="admin_controller" ng-init="currentTool='dashboard'">
+
+    <div id="admin_owner">
+        <div class="admin_area">
+            <div class="logo_area">
+                <p class="admin_logo_area">
+                    <span style="font-size:18px; font-weight: bold;">
+                        KH Schools of Excellence<br>
+                        <span style="font-size:12px">Education | Character | Leadership</span>
+                </p>
+            </div>
+        </div>
+        <div class="admin_manager">
+            <div class="admin_menu">
+                <div class="admin_menu_item">
+                    <p class="admin_menu_item_def_title">Admin Panel</p>
+                </div>
+                <br />
+                <div class="admin_menu_item"
+                     ng-click="currentTool='dashboard'">
+
+                    <p class="admin_menu_item_def">
+                        Dashboard
+                    </p>
+
+                    <img src="../Drawables/rightExpand.png" />
+                </div>
+                <div class="admin_menu_item" ng-show="currentAdminData.permissions.includes('MODIFY_KHGIRLS_NOTICES') | currentAdminData.permissions.includes('MODIFY_KHBOYS_NOTICES')" ng-click="currentTool='notice_manager'">
+                    <p class="admin_menu_item_def">Notices</p>
+                    <img src="../Drawables/rightExpand.png" />
+                </div>
+
+            </div>
+            <div class="menu_content">
+                <div class="dashboard" ng-if="currentTool=='dashboard'">
+                    <div class="admin-role-container">
+                        <div class="admin-data">
+                            <img src="../Drawables/admin_user.png" />
+                            <div class="admin-credentials">
+                                <p>{{currentAdminData.admin_name}}</p>
+                                <div></div>
+                                <p class="admin_id_dashboard">#{{currentAdminData.admin_id}}</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="admin_datas_block">
+                            <div class="admin-role-container">
+                                <div class="admin-role">
+                                    <p class="admin_role_tag">Admin role</p>
+                                    <p class="admin_role_current">{{currentAdminData.admin_role}}</p>
+                                </div>
+                            </div>
+                            <div class="admin-role-container">
+                                <div class="admin-role">
+                                    <p class="admin_role_tag">Admin role</p>
+                                    <p class="admin_role_current">{{currentAdminData.admin_role}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div ng-if="currentTool=='notice_manager'">
+
+                        <!-- Girls Notices -->
+                        <div class="notices_manager_box" ng-show="currentAdminData.permissions.includes('MODIFY_KHGIRLS_NOTICES')">
+                            <p>Manage Girls School Notices</p>
+                            <div class="notice_adder_box" onclick="showGirlsNoticeMaker('KHGIRLS')">
+                                <img src="../Drawables/notice_adder.png" />
+                                <p>Add Notice</p>
+                            </div>
+                            <table border="1" class="notices_table" id="girls_notice_table" ng-if="girlsSchool.school_circulars.length>0">
+                                <tr>
+                                    <th class="desktop_hider">S.No</th>
+                                    <th>Notice</th>
+                                    <th class="desktop_hider">Notice Issued on date</th>
+                                    <th class="desktop_hider">Notice Issued on time</th>
+                                    <th>Notice status</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr ng-repeat="notice in girlsSchool.school_circulars">
+                                    <td class="desktop_hider"> {{$index + 1}}</td>
+                                    <td>{{notice.notice_content}}</td>
+                                    <td class="desktop_hider">{{notice.notice_issued_on_date}}</td>
+                                    <td class="desktop_hider">{{convertToAmPm(notice.notice_issued_on_time)}}</td>
+                                    <td>
+                                        <button class="notice_status"
+                                                ng-click="change_status($index, 'KHGIRLS')"
+                                                ng-style="{
+          'background-color': notice.notice_status ? 'green' : 'crimson',
+          'color': 'white',
+          'padding': '6px 12px',
+          'border': 'none',
+          'border-radius': '4px',
+          'cursor': 'pointer'
+        }">
+                                            {{ notice.notice_status ? 'Enabled' : 'Disabled' }}
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="notice_status" ng-click="delete_notice($index, 'KHGIRLS')">Delete</button>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <!-- Boys Notices -->
+                        <div class="notices_manager_box" ng-show="currentAdminData.permissions.includes('MODIFY_KHBOYS_NOTICES')">
+                            <p>Manage Boys School Notices</p>
+                            <div class="notice_adder_box" onclick="showGirlsNoticeMaker('KHBOYS')">
+                                <img src="../Drawables/notice_adder.png" />
+                                <p>Add Notice</p>
+                            </div>
+                            <table border="1" class="notices_table" id="boys_notice_table" ng-if="boysSchool.school_circulars.length>0">
+                                <tr>
+                                    <th class="desktop_hider">S.No</th>
+                                    <th>Notice</th>
+                                    <th class="desktop_hider">Notice Issued on date</th>
+                                    <th class="desktop_hider">Notice Issued on time</th>
+                                    <th>Notice status</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr ng-repeat="notice in boysSchool.school_circulars">
+                                    <td class="desktop_hider">{{$index + 1}}</td>
+                                    <td>{{notice.notice_content}}</td>
+                                    <td class="desktop_hider">{{notice.notice_issued_on_date}}</td>
+                                    <td class="desktop_hider">{{convertToAmPm(notice.notice_issued_on_time)}}</td>
+                                    <td>
+                                        <button class="notice_status"
+                                                ng-click="change_status($index, 'KHBOYS')"
+                                                ng-style="{
+          'background-color': notice.notice_status ? 'green' : 'crimson',
+          'color': 'white',
+          'padding': '6px 12px',
+          'border': 'none',
+          'border-radius': '4px',
+          'cursor': 'pointer'
+        }">
+                                            {{ notice.notice_status ? 'Enabled' : 'Disabled' }}
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="notice_status" ng-click="delete_notice($index, 'KHBOYS')">Delete</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+        </div>
+    </div>
+    </div>
+    <div class="notice_maker_box" id="notice_maker_box">
+        <div class="main_notice_editor_box">
+            <img src="../Drawables/closer.png" id="adminBoxCloser" onclick="closeNoticeBox()" />
+            <p class="notice_adder_tag">Add a notice</p>
+            <input type="text" class="notice_adder" id="current_notice" placeholder="Enter new notice" /><br />
+            <button type="button" class="notice_poster" ng-click="addNotice()" >Add Notice</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- Scripts -->
+    <script src="../Scripts/ang.js"></script>
+    <script src="../Scripts/jquery.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>

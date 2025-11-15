@@ -1,0 +1,410 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>KH Group of Schools</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bitter:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&family=Dancing+Script:wght@400..700&family=Didact+Gothic&family=Great+Vibes&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sacramento&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body onload="checkActions()" ng-app="mainPage" ng-controller="mainPageController">
+    <!-- Navigation Bar -->
+    <div class="welcome_body">
+        <div class="logo_area">
+            <p>
+                <span style="font-size:18px; font-weight: bold;">
+                    KH Schools of Excellence<br>
+                    <span style="font-size:12px">Education | Character | Leadership</span>
+            </p>
+        </div>
+
+        <div class="nav_area">
+            <!-- About Us -->
+            <div class="nav_area_item_container">
+                <div class="nav_area_item" onclick="scrollToHome()">
+                    <p class="nav_area_item_def">Home</p>
+                </div>
+            </div>
+            <div class="nav_area_item_container">
+                <div class="nav_area_item">
+                    <p class="nav_area_item_def">About us</p>
+                    <img src="Drawables/drop_down.png" class="drop_down_button">
+                </div>
+                <div class="chatbox">
+                    <div class="chatbox_sub" onclick="scrollToHistory()"><p>Brief History of the school</p></div><br>
+                    <div class="chatbox_sub"><p>Managing Committee</p></div><br>
+                    <div class="chatbox_sub" onclick="scrollToStrategicStatements()"><p>Strategic Statements</p></div><br>
+                    <div class="chatbox_sub" onclick="scrollToContactUs()"><p>Contact us</p></div>
+                </div>
+            </div>
+
+            <!-- Admissions -->
+            <div class="nav_area_item_container">
+                <div class="nav_area_item">
+                    <p class="nav_area_item_def">Academics</p>
+                    <img src="Drawables/drop_down.png" class="drop_down_button">
+                </div>
+                <div class="chatbox" onclick="scrollToCirculars()">
+                    <div class="chatbox_sub"><p>Notices & Circulars</p></div>
+                </div>
+            </div>
+
+            <!-- Facilities -->
+            <div class="nav_area_item_container">
+                <div class="nav_area_item">
+                    <p class="nav_area_item_def">Facilities</p>
+                    <img src="Drawables/drop_down.png" class="drop_down_button">
+                </div>
+                <div class="chatbox">
+                    <div class="chatbox_sub" onclick="setLocation('campus', 'HTML/classrooms.html')"><p>Campus</p></div><br>
+                    <div class="chatbox_sub" onclick="setLocation('classrooms', 'HTML/classrooms.html')"><p>Smart Classrooms</p></div><br>
+                    <div class="chatbox_sub" onclick="setLocation('laboratories', 'HTML/classrooms.html')"><p>Laboratories</p></div><br>
+                    <div class="chatbox_sub" onclick="setLocation('libraries', 'HTML/classrooms.html')"><p>Library</p></div>
+                </div>
+            </div>
+
+            <!-- News & Events -->
+            <div class="nav_area_item_container">
+                <div class="nav_area_item">
+                    <p class="nav_area_item_def">Login</p>
+                    <img src="Drawables/drop_down.png" class="drop_down_button">
+                </div>
+                <div class="chatbox">
+                    <div class="chatbox_sub" onclick="showAdminBox()"><p>Admin Login</p></div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+  
+    <!-- Hero Section -->
+    <div class="home_owner" id="home_owner">
+        <div class="hero_lines_container" id="slide_image">
+            <div class="hero_section">
+                <br><br><br>
+                <p>Welcome to<br> KH Group of Schools</p>
+                <br>
+                <sub id="current_hero_line">This is the definition of the hero line</sub>
+                <br><br><br>
+                <div class="image_slider">
+                    <div class="dots_parent">
+                        <div class="img_1 slider_dot"></div>
+                    </div>
+                    <div class="dots_parent">
+                        <div class="img_2 slider_dot"></div>
+                    </div>
+                    <div class="dots_parent">
+                        <div class="img_3 slider_dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Teachers Section -->
+        <div class="card_owner">
+            <!-- 📦 Group 1: Two cards -->
+            <div class="card_group">
+                <div class="teacher_card">
+                    <div>
+                        <p class="teacher_card_title">BEST TEACHERS</p>
+                        <br>
+                        <p class="card_defs">Great Teachers <br /> Create Great Thinkers</p>
+                    </div>
+                </div>
+                <br />
+                <div class="teacher_card_2">
+                    <div>
+                        <p class="teacher_card_title">BEST CLASSROOMS</p>
+                        <br>
+                        <p class="card_defs">Empowering Education <br />with Cutting-Edge Smart Classrooms</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 📦 Group 2: Two cards -->
+            <div class="card_group" id="cardGroup2">
+                <div class="teacher_card_3">
+                    <div>
+                        <p class="teacher_card_title">BEST TRANSPORTS</p>
+                        <br>
+                        <p class="card_defs">Safe, comfortable, and always on time, because every ride matters.</p>
+                    </div>
+                </div>
+                <br />
+                <div class="teacher_card_4">
+                    <div>
+                        <p class="teacher_card_title">BEST FACILITIES</p>
+                        <br>
+                        <p class="card_defs">Smart Classrooms, <br />Safe Playgrounds, Bright Futures</p>
+                    </div>
+                </div>
+            </div>
+
+                <div id="welcomeGroup">
+                    <p class="cardGroup3Name">KH GROUP OF SCHOOLS, ALL THE TIME</p>
+                    <p id="cardGroup3Title">Empowering Minds, Shaping Futures</p>
+                    <br>
+                    <div class="line_coverer">
+                        <div class="horizontal_line_decor"></div>
+                    </div>
+                    <br>
+                    <p class="cardGroup3Description">
+                        At KH Group of Schools, we are dedicated to delivering a world-class education that empowers students to achieve their highest potential. Our commitment goes beyond academics — we strive to cultivate a nurturing and dynamic learning environment where curiosity is encouraged, talents are nurtured, and character is built. Through a blend of academic excellence, innovative teaching methodologies, and a strong emphasis on holistic development, we equip our students with the knowledge, skills, and confidence needed to thrive in an ever-evolving global landscape.
+
+                        We believe education should inspire not just minds, but hearts — fostering values like integrity, resilience, empathy, and leadership. At KH Group of Schools, students are encouraged to think critically, dream boldly, and act responsibly. By integrating modern technology, creative problem-solving, and real-world learning experiences, we prepare our learners to be future-ready citizens who will shape the world for the better.
+
+                        Join us in our mission to nurture the next generation of thinkers, leaders, and changemakers — because the future deserves nothing less than excellence.
+                    </p>
+                </div>
+        </div>
+        
+        <div class="second_section">
+            <div class="second_section_descriptions">
+                <p class="cardGroup3Name">KH GROUP OF SCHOOLS, ALL THE TIME</p>
+                <p id="cardGroup3Title">Limitless Learning, Boundless Futures</p>
+                <br>
+                <div class="line_coverer">
+                    <div class="horizontal_line_decor"></div>
+                </div>
+                <br>
+                <p class="introSect">
+                    At KH Group of Schools, we believe that education is not confined to textbooks or classrooms. "Limitless Learning, Boundless Futures" reflects our commitment to nurturing curious minds, encouraging innovation, and equipping every student with the skills and confidence to thrive in a rapidly changing world. With a dynamic curriculum, passionate educators, and a focus on holistic development, we inspire our learners to reach beyond boundaries and shape their own extraordinary futures.
+                </p>
+            </div>
+            <div class="second_image_section">
+                <img src="Drawables/second_section_image.jpeg" class="second_section_image">
+            </div>
+        </div>
+        <div class="history_container">
+            <div id="historyGroup">
+                <p class="cardGroup3Name">KH GROUP OF SCHOOLS, ALL THE TIME</p>
+                <p id="cardGroup3Title">Brief history of the school</p>
+                <br>
+                <div class="line_coverer">
+                    <div class="horizontal_line_decor"></div>
+                </div>
+                <br>
+                <p class="cardGroup3Description" class="des1">
+                    KH Matriculation School was established in 1991 by Janab Mohamed Hashim Saheb, an industrialist and philanthropist, with the vision of the holistic child development. Initially starting with 16 staff and 89 students, the school expanded quickly, gaining state recognition in 1994 and extending to higher grades annually.
+                    In 1996, a seperate boys school campus was establised in Then Nandiyalam. Over time, KH Matriculation School evolved into KH Group of Schools, featuring distinct campuses for boys and girls, KH Matriculation Boys Higher Secondary School and KH Matriculation Girls Higher Secondary School.
+                    By 1998, the group was elevated to Higher Secondary School status. As of the time recorded, the Boys School has 570 students and 60 staff, while the Girls School has 1707 students and 150 staff.
+                    On August 14, 2013, the institution was certified as Muslim Minority Institution by the National Commission for Minority Educational Institutions. KH Group of Schools is now recognized as a leading institution in Ranipet district, known for quality education over three decades.
+                </p>
+
+            </div>
+
+        </div>
+        <div class="notice_container">
+            <div id="historyGroup">
+                <p class="cardGroup3Name">KH GROUP OF SCHOOLS, ALL THE TIME</p>
+                <p id="cardGroup3Title">Bulletin Board</p>
+            </div>
+        </div>
+        <div class="notice_bar">
+            <div class="notices_collection" id="bulletin_board">
+                <div class="main-notice-container" id="girlsContainer" ng-show="countElementsInDiv('girlsContainer') > 0">
+                    <div class="main_notice_item" ng-repeat="notice in girlsSchool.school_circulars">
+                        <div class="calendar_date">
+                            <div class="notice_child">
+                                <p style="font-weight:bold; margin-bottom:5px; font-size:10px;">{{getDateInfo(notice.notice_issued_on_date, "month")}}</p>
+                                <p style=" margin-bottom:5px; font-size:20px; font-weight:bold;">{{getDateInfo(notice.notice_issued_on_date, "day")}}</p>
+                                <p style=" margin-bottom:5px; font-size:10px;">{{getDateInfo(notice.notice_issued_on_date, "year")}}</p>
+                            </div>
+                        </div>
+                        <div class="content_container">
+                            <p style="font-size:18px;padding:5px;">Notice from KH Girls School</p>
+                            <p style="font-size:13px;padding:5px; font-weight:bold;">{{notice.notice_content}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-notice-container" id="boysContainer" ng-show="countElementsInDiv('boysContainer')>0">
+                    <div class="main_notice_item" ng-repeat="notice in boysSchool.school_circulars">
+                        <div class="calendar_date">
+                            <div class="notice_child">
+                                <p style="font-weight:bold; margin-bottom:5px; font-size:10px;">{{getDateInfo(notice.notice_issued_on_date, "month")}}</p>
+                                <p style=" margin-bottom:5px; font-size:20px;">{{getDateInfo(notice.notice_issued_on_date, "day")}}</p>
+                                <p style=" margin-bottom:5px; font-size:10px;">{{getDateInfo(notice.notice_issued_on_date, "year")}}</p>
+                            </div>
+                        </div>
+                        <div class="content_container">
+                            <p style="font-size:18px;padding:3px;">Notice from KH Boys School</p>
+                            <p style="font-size:13px; font-weight:bold; padding:3px;">{{notice.notice_content}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="collections-data">
+            <p class="cardGroup3Name">KH GROUP OF SCHOOLS, ALL THE TIME</p>
+            <p id="cardGroup3Title">Our Impact in Numbers</p>
+        </div>
+        <br>
+        <div class="third_section">
+            <div class="attraction_cards" id="card1">
+                <div class="cards_body">
+                    <img src="Drawables/card1Pic.png">
+                    <p>100% Results</p>
+                </div>
+            </div>
+            <div class="attraction_cards" id="card2">
+                <div class="cards_body">
+                    <img src="Drawables/card2Pic.png">
+                    <p>2275+ Students</p>
+                </div>
+            </div>
+            <div class="attraction_cards" id="card3">
+                <div class="cards_body">
+                    <img src="Drawables/card3Pic.png">
+                    <p>130+ Teachers</p>
+                </div>
+            </div>
+            <div class="attraction_cards" id="card4">
+                <div class="cards_body">
+                    <img src="Drawables/card4Pic.png">
+                    <p>District Rank</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="collections-data" id="school_statements_body">
+            <p class="cardGroup3Name">KH GROUP OF SCHOOLS, ALL THE TIME</p>
+            <p id="cardGroup3Title">Strategic Statements</p>
+            <br>
+        </div>
+        <div class="fourth_section">
+            <div class="school_statements" id="mission_body">
+                <div class="statement_head">
+                    <img src="Drawables/mission.png">
+                    <p>Our Mission</p>
+                </div>
+                <br>
+                <div class="statement_body">
+                    <p>Emphasizing personality growth,<br> effective goal setting, and<br> the academic excellence.</p>
+                </div>
+                <br>
+            </div>
+            <div class="school_statements" id="vision_body">
+                <div class="statement_head">
+                    <img src="Drawables/vision.png">
+                    <p>Our Vision</p>
+                </div>
+                <br>
+                <div class="statement_body">
+                    <p>We focus on assimilating values,<br> building community,and <br>fostering faith formation.</p>
+                </div>
+                <br>
+            </div>
+            <div class="school_statements" id="values_body">
+                <div class="statement_head">
+                    <img src="Drawables/values.png">
+                    <p>Our Values</p>
+                </div>
+                <br>
+                <div class="statement_body">
+                    <p>We provide value-based education,<br> equip students with life skills, and<br> train young minds to be future leaders.</p>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="bottom_section" id="bottom_section">
+            <div class="bottom_section_content">
+                <p class="institutions_tag">Our institutions</p>
+                <br>
+                <div class="line_coverer">
+                    <div class="horizontal_line_decor"></div>
+                </div>
+                <br>
+                <p class="institutions_name"><span style="color:white;">KH Matriculation Girls higher Secondary School</span> - Melvisharam</p>
+                <p class="institutions_name"><span style="color:white;">KH Matriculation Boys higher Secondary School</span> - Then Nandiyalam</p>
+                <br>
+                <p class="institutions_tag">Contact us</p>
+                <br>
+                <div class="line_coverer">
+                    <div class="horizontal_line_decor"></div>
+                </div>
+                <br>
+                <p class="institutions_name"><span style="color:white;">KH Matriculation Girls higher Secondary School</span></p>
+                <p class="institutions_name"><span style="color:white;">Mail</span> khgirls.office@gmail.com</p>
+                <p class="institutions_name"><span style="color:white;">Telephone</span> 04172 - 266006</p>
+                <p class="institutions_name"><span style="color:white;">Address</span> No.1/16 Khizarabad 1st Street, Melvisharam, Ranipet Dist.</p>
+                <br>
+                <p class="institutions_name"><span style="color:white;">KH Matriculation Boys higher Secondary School</span></p>
+                <p class="institutions_name"><span style="color:white;">Mail</span> khboys.office@gmail.com</p>
+                <p class="institutions_name"><span style="color:white;">Telephone</span> 04172 - 266704</p>
+                <p class="institutions_name"><span style="color:white;">Address</span> Then Nandiyalam - 632 517, Ranipet District</p>
+            </div>
+            <div class="school-maps">
+                <div class="map-box">
+                    <p class="institutions_tag" id="geo_tag">KH Girls School Location</p>
+                    <div class="map-container">
+                        <iframe class="map_ref" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.2183457869587!2d79.27455557404964!3d12.92084731599101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad366e4c6e0d9d%3A0xa3ed830823f74c73!2sK.H.%20MATRIC.%20GIRLS%20HR.%20SEC.%20SCHOOL.!5e1!3m2!1sen!2sin!4v1747811961893!5m2!1sen!2sin" width="80%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" layer="s"></iframe>
+                    </div>
+                </div>
+                <br>
+                <div class="map-box">
+                    <p class="institutions_tag" id="geo_tag">KH Boys School Location</p>
+                    <div class="map-container">
+                        <iframe class="map_ref" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3205.160532612317!2d79.26491577404973!3d12.925351315892627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad3641d3e17e79%3A0xc32ff529c7de333c!2sK.H%20Matriculation%20Boys%20Higher%20Secondary%20School!5e1!3m2!1sen!2sin!4v1747811494837!5m2!1sen!2sin" width="80%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="admin_login_section" id="admin_login_section">
+        <div class="admin_login_box">
+            <div class="login_content" id="login_content">
+                <img src="Drawables/closer.png" id="adminBoxCloser" onclick="closeAdminBox()" />
+                <p class="login_box_tag">
+                    <span style="font-size:20px; font-weight: bold; font-family: 'Outfit'" ;>Admin Login<br>
+                </p>
+                <br>
+                <p style="font-family: 'Outfit'; color:grey; font-size:13px;" class="boxTag">Authorized access for school administrators only</p>
+                <br>
+                <br>
+                <div class="admin_login_container">
+                    <input type="text" class="admin_login" id="admin_id" placeholder="Admin ID"><br />
+                </div>
+
+                <div class="admin_login_container">
+                    <input type="password" class="admin_login" id="admin_password" placeholder="Admin Passkey"><br />
+                </div>
+
+                <div class="admin_login_container">
+                    <button type="button" class="admin_logger" onclick="loginAdmin()">Login</button>
+                </div>
+            </div>
+            <div class="success_denoter" style="display:none;" id="success_denoter">
+                <div class="admin_success_box" style="display:flex; padding:10px;">
+                    <img src="../Drawables/tickDenoter.png" style="width:40px; height:40px;" />
+                    <p style="color:limegreen; font-family:'Outfit'; font-size:36px; padding-left:5px;">Successfull</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="Scripts/ang.js"></script>
+    <script src="Scripts/jquery.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

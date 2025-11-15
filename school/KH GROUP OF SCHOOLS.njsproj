@@ -1,0 +1,130 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>KH GROUP OF SCHOOLS</Name>
+    <RootNamespace>KH GROUP OF SCHOOLS</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d5886bc5-1488-455d-90bf-18a343a75d80</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="public\certs\fullchain.pem" />
+    <Content Include="public\certs\privkey.pem" />
+    <Content Include="public\Drawables\address.png" />
+    <Content Include="public\Drawables\admin_user.png" />
+    <Content Include="public\Drawables\allTeachers.png" />
+    <Content Include="public\Drawables\background.jpg" />
+    <Content Include="public\Drawables\boys_grad.jpg" />
+    <Content Include="public\Drawables\boys_logo.png" />
+    <Content Include="public\Drawables\bulletin.png" />
+    <Content Include="public\Drawables\class_background.jpg" />
+    <Content Include="public\Drawables\colored_logo_boys.jpg" />
+    <Content Include="public\Drawables\colored_logo_boys.png" />
+    <Content Include="public\Drawables\contact.png" />
+    <Content Include="public\Drawables\email.png" />
+    <Content Include="public\Drawables\enrolled_students_icon.png" />
+    <Content Include="public\Drawables\facilities.png" />
+    <Content Include="public\Drawables\forward_arrow.png" />
+    <Content Include="public\Drawables\girls_grad.jpg" />
+    <Content Include="public\Drawables\girls_logo.png" />
+    <Content Include="public\Drawables\history.png" />
+    <Content Include="public\Drawables\information.png" />
+    <Content Include="public\Drawables\loader.gif" />
+    <Content Include="public\Drawables\male_profile.png" />
+    <Content Include="public\Drawables\management.png" />
+    <Content Include="public\Drawables\menu.png" />
+    <Content Include="public\Drawables\mission.png" />
+    <Content Include="public\Drawables\new_sym.png" />
+    <Content Include="public\Drawables\notice_adder.png" />
+    <Content Include="public\Drawables\objectives.png" />
+    <Content Include="public\Drawables\rightExpand.png" />
+    <Content Include="public\Drawables\sample_logo.png" />
+    <Content Include="public\Drawables\school_icon.png" />
+    <Content Include="public\Drawables\school_image.jpg" />
+    <Content Include="public\Drawables\staff.png" />
+    <Content Include="public\Drawables\students.jpg" />
+    <Content Include="public\Drawables\students_current.png" />
+    <Content Include="public\Drawables\telephone.png" />
+    <Content Include="public\Drawables\tickDenoter.png" />
+    <Content Include="public\Drawables\touch.png" />
+    <Content Include="public\Drawables\vision.png" />
+    <Content Include="public\Drawables\welcomer.jpg" />
+    <Content Include="public\HTML\admin.html" />
+    <Content Include="public\HTML\classrooms.html" />
+    <Content Include="public\index.html" />
+    <Content Include="public\script.js" />
+    <Content Include="public\Scripts\ang.js" />
+    <Content Include="public\Scripts\jquery.js" />
+    <Content Include="public\styles.css" />
+    <Content Include="server.js" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="public\Drawables\" />
+    <Folder Include="public\HTML\" />
+    <Folder Include="public\certs\" />
+    <Folder Include="public\Scripts\" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

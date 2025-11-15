@@ -1,0 +1,1383 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit";
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background: #f5f5f5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+}
+
+.desktop_hider {
+    display: none !important;
+}
+
+.welcome_body {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    font-family: "Host Grotesk", sans-serif;
+    z-index: 1000; /* ensure it stays above other content */
+}
+
+.nav_area {
+    display: flex;
+    z-index: 1000;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+
+.nav_area_item {
+    display: flex;
+    padding: 10px;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+}
+
+    .nav_area_item p {
+        cursor: pointer;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+.drop_down_button {
+    height: 13px;
+}
+
+.nav_area_item_def {
+    padding: 5px;
+}
+
+.nav_area_item_def_special {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.nav_area_item_container {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.chatbox {
+    position: absolute;
+    background-color: #f9f9f9;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.nav_area_item_container:hover .chatbox {
+    opacity: 1;
+    pointer-events: auto;
+    animation: dropIn 0.5s;
+}
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.chatbox_sub {
+    padding: 3px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+}
+
+    .chatbox_sub img {
+        height: 20px;
+    }
+
+    .chatbox_sub p {
+        font-size: 15px;
+    }
+
+.hero_lines_container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("Drawables/background.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+    .hero_section p {
+        color: white;
+        font-size: 350%;
+        font-weight: bold;
+        font-family: "Noto Serif", serif;
+    }
+
+    .hero_section sub {
+        color: white;
+        font-size: 120%;
+        font-family: "Host Grotesk", sans-serif;
+    }
+
+.img_1, .img_2, .img_3 {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+
+.image_slider {
+    display: flex;
+}
+
+#slide_image {
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+.card_defs {
+    font-size: 15px;
+}
+
+/* Cards Section */
+.teacher_card, .teacher_card_2, .teacher_card_3, .teacher_card_4 {
+    width: 220px;
+    height: 250px;
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: dropIn 0.4s;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.teacher_card {
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)), url("Drawables/teacher_card_1.png");
+}
+
+.teacher_card_2 {
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)), url("Drawables/classrooms.jpg");
+}
+
+.teacher_card_3 {
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)), url("Drawables/schoolBus.jpg");
+}
+
+.teacher_card_4 {
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)), url("Drawables/facilities.jpg");
+}
+
+    .teacher_card:hover,
+    .teacher_card_2:hover,
+    .teacher_card_3:hover,
+    .teacher_card_4:hover,
+    .second_section_image:hover,
+    .attraction_cards:hover {
+        transform: scale(1.05);
+    }
+
+
+.teacher_card_title {
+    font-weight: bold;
+}
+
+/* Responsive Section */
+@media only screen and (max-width: 768px) {
+
+    .home_owner {
+        margin-top: -85px !important;
+    }
+
+    #phone_menu {
+        display: block !important;
+    }
+
+    #phone_nav_area {
+        display: flex !important;
+    }
+
+    .admin_login, .admin_logger {
+        max-width: 95%;
+    }
+
+    #welcomeGroup {
+        padding-top: 20px !important;
+    }
+
+    .school-maps, .nav_area {
+        display: none !important;
+    }
+
+
+    #cardGroup2 {
+        padding-top: 20px;
+    }
+
+    .card_owner, .fourth_section, .third_section {
+        display: block !important;
+    }
+
+    .school_statements, .attraction_cards {
+        width: 100% !important;
+    }
+
+    .teacher_card, .teacher_card_2, .teacher_card_3, .teacher_card_4 {
+        width: 100% !important;
+    }
+
+    .school_statements, .attraction_cards {
+        margin-bottom: 20px !important;
+    }
+
+    .second_image_section {
+        display: none;
+    }
+
+    .nav_area {
+        display: block;
+    }
+
+    .hero_section p {
+        font-size: 25px;
+    }
+
+    #current_hero_line {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+
+/* About & Card Grouping */
+.about_section p {
+    color: grey;
+    font-size: 21px;
+}
+
+#cardGroup3 {
+    flex: 1;
+}
+
+.cardGroup3Name {
+    color: grey;
+    font-size: 22px;
+    padding: 5px;
+}
+
+#cardGroup3Title {
+    color: black;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.line_coverer {
+    padding: 5px;
+}
+
+.horizontal_line_decor {
+    width: 10%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: gainsboro;
+}
+
+.cardGroup3Description {
+    color: grey;
+    font-size: 15.55px;
+    line-height: 30px;
+    padding: 5px;
+}
+
+.card_owner {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.card_group {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.card_group_container {
+    display: flex;
+    width: fit-content;
+    flex: 1;
+}
+
+
+
+/* Second Section Styling */
+.second_section {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.second_section_image {
+    border-radius: 15px;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)));
+    background-size: cover;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    height: 290px;
+    width: auto;
+}
+
+.second_section_descriptions {
+    width: 100%;
+}
+
+.collections-data {
+    height: fit-content;
+    padding: 20px;
+}
+
+.second_image_section {
+    padding: 10px;
+}
+
+.logo_area {
+    width: fit-content;
+    height: fit-content;
+}
+
+    /* Logo Text */
+    .logo_area p {
+        white-space: nowrap;
+        color: white;
+        font-family: "Outfit";
+    }
+
+.third_section {
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}
+
+.attraction_cards {
+    width: 30%;
+    height: 200px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    background-color: white;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+#card1, #card2, #card3, #card4 {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    overflow: hidden; /* important to clip the overlay */
+}
+
+#card1, #card2, #card3, #card4 {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+}
+
+/* Background images */
+#card1 {
+    background-image: url("Drawables/card1.jpg");
+}
+
+#card2 {
+    background-image: url("Drawables/card2.jpg");
+}
+
+#card3 {
+    background-image: url("Drawables/card3.jpg");
+}
+
+#card4 {
+    background-image: url("Drawables/card4.jpg");
+}
+
+    /* Overlay for all cards */
+    #card1::before,
+    #card2::before,
+    #card3::before,
+    #card4::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Hover overlay fade */
+    #card1:hover::before,
+    #card2:hover::before,
+    #card3:hover::before,
+    #card4:hover::before {
+        opacity: 0.7;
+    }
+
+    /* Ensures text/content is above overlay */
+    #card1 > *, #card2 > *, #card3 > *, #card4 > * {
+        position: relative;
+    }
+
+/* Card content layout */
+.cards_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+    .cards_body p {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Outfit";
+    }
+
+.fourth_section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.school_statements {
+    width: 40%;
+    height: 550px;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+    .school_statements:hover {
+        transform: scale(1.05);
+    }
+
+#mission_body {
+    object-fit: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)),url("Drawables/missionCardPic.png");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+}
+
+#vision_body {
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)),url("Drawables/visionCardPic.jpg");
+    background-size: cover;
+    object-fit: cover;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+}
+
+#values_body {
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85)), url("Drawables/valuesCardPic.jpg");
+    background-size: cover;
+    object-fit: cover;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+}
+
+.statement_head, .statement_body {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+    .statement_body p {
+        text-align: center;
+        line-height: 30px;
+        padding: 40px;
+        color: white;
+        font-family: "Outfit";
+    }
+
+    .statement_head img {
+        padding: 60px !important;
+    }
+
+    .statement_head p {
+        font-size: 250%;
+        font-weight: bold;
+        font-family: "Outfit";
+        color: white;
+    }
+
+gallery-head {
+    font-size: 40px;
+    font-family: "Outfit";
+}
+
+.gallery_section {
+    background-image: #28282B;
+}
+
+.pictures {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap; /* Wraps to next line if not enough space */
+    gap: 1%;
+}
+
+    .pictures img {
+        width: 24%;
+        padding: 5px;
+        border-radius: 25px;
+        border-radius: 5px;
+        transition: 0.2s background ease-in-out, transform 0.4s ease-in-out;
+    }
+
+        .pictures img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+.image_viewer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: display;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: none;
+}
+
+    .image_viewer img {
+        height: 90%;
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        transition: transform 0.3s ease; /* Only transform needed */
+        border-radius: 15px;
+        pointer-events: none;
+    }
+
+        .image_viewer img:hover {
+            transform: scale(0.99);
+        }
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    .cardGroup3Description {
+        color: grey;
+        font-size: 15.55px;
+        line-height: 30px;
+        padding: 5px;
+        /* Truncate overflow text with ellipsis (multi-line) */
+        display: -webkit-box;
+        -webkit-line-clamp: 12; /* Shows 3 lines based on 30px line-height */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .introSect {
+        display: -webkit-box;
+        -webkit-line-clamp: 6; /* Shows 3 lines based on 30px line-height */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.introSect {
+    color: grey;
+    font-size: 15.55px;
+    line-height: 30px;
+    padding: 5px;
+}
+
+#historyGroup {
+    width: 100%;
+    padding: 20px;
+}
+
+.history_container {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.bottom_section {
+    width: 100%;
+    background-color: #28282B;
+    left: 0;
+    display: flex;
+    bottom: 0;
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+/* Inner Content Styling */
+.bottom_section_content {
+    padding: 20px;
+}
+
+/* Main Tag */
+.institutions_tag {
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+}
+
+/* Institution Names */
+.institutions_name {
+    color: gainsboro;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.geo_tag {
+    color: white;
+    white-space: nowrap;
+    padding: 5px;
+    font-weight: normal;
+}
+
+.map_ref {
+    border-radius: 15px;
+    padding: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+    .map_ref:hover {
+        transform: scale(1.05);
+    }
+
+.school-maps {
+    display: flex;
+    height: fit-content;
+    padding: 20px;
+    gap: 10px;
+    width: 100%;
+}
+
+.image_wrapper {
+    position: relative;
+    width: 60%; /* or any size you want */
+    max-width: 100%;
+    margin: auto;
+}
+
+#focused_image {
+    width: 100%;
+    display: block;
+}
+
+.left_arrow_container,
+.right_arrow_container {
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3); /* semi-transparent background */
+    transition: background-color 0.3s;
+}
+
+    .left_arrow_container:hover,
+    .right_arrow_container:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+.left_arrow_container {
+    left: 0;
+}
+
+.right_arrow_container {
+    right: 0;
+}
+
+.close-button {
+    position: absolute;
+    padding: 20px;
+    right: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.admin_login_section {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: none;
+}
+
+.admin_login_box {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid gainsboro;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    width: fit-content;
+    max-width: 95%;
+    position: absolute;
+    text-align: center !important;
+    background-color: #FFFFF0;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.home_owner {
+    margin-top: -90px;
+    left: 0;
+    /*filter: blur(10px);*/
+}
+
+.login_box_tag {
+}
+
+.admin_ttag {
+    font-size: 30px;
+}
+
+.admin_login {
+    height: 50px;
+    width: 350px;
+    background-color: gainsboro;
+    border: none;
+    padding: 10px !important;
+    border-radius: 5px;
+    outline: none;
+}
+
+.admin_login_container {
+    padding: 10px;
+}
+
+.admin_logger {
+    height: 50px;
+    width: 350px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #343A40;
+    letter-spacing: 1px;
+}
+
+#admin_id {
+    text-transform: uppercase;
+}
+
+    #admin_id::placeholder {
+        text-transform: capitalize;
+    }
+
+.admin_success_box {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.admin_area {
+    background: #5072A7 !important;
+    padding: 15px;
+}
+
+.admin-role-container {
+    padding: 5px;
+}
+
+.admin_menu {
+    width: 275px;
+    background: #28282B;
+    height: auto;
+    min-height: 100vh;
+    padding: 7px;
+}
+
+.admin_manager {
+    display: flex;
+}
+
+.admin_menu_item {
+    display: flex;
+    cursor: pointer;
+    align-content: center;
+    align-items: center;
+}
+
+    .admin_menu_item img {
+        height: 13px;
+    }
+
+.admin_menu_item_def {
+    padding: 8px;
+    color: white;
+}
+
+.admin_menu_item_def_title {
+    padding: 8px;
+    font-size: 25px;
+    color: white;
+}
+
+.menu_content {
+    padding: 22px;
+    width: 100% !important;
+}
+
+.admin-data {
+    width: 100%;
+    padding: 20px;
+    height: 100px;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: start;
+    align-items: center;
+    display: flex;
+}
+
+    .admin-data img {
+        height: 60px;
+    }
+
+.admin-credentials {
+    padding: 10px;
+}
+
+    .admin-credentials div {
+        height: 17px;
+    }
+
+.admin_id_dashboard {
+    color: grey;
+    font-size: 10px;
+}
+
+.admin-role {
+    width: fit-content;
+    padding: 20px;
+    height: fit-content;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    border-bottom: 5px solid dodgerblue;
+}
+
+.admin_role_current {
+    color: grey;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.admin_role_tag {
+    padding: 5px;
+}
+
+.admin_datas_block {
+    display: flex;
+}
+
+.admin-role-2 {
+    width: fit-content;
+    padding: 20px;
+    height: fit-content;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    border-bottom: 5px solid crimson;
+}
+
+.admin-role-3 {
+    width: fit-content;
+    padding: 20px;
+    height: fit-content;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    border-bottom: 5px solid limegreen;
+}
+
+#permission_item {
+}
+
+.active_tool {
+    background: white;
+    color: black !important;
+}
+
+.active_tool_tag {
+    color: white;
+}
+
+.notices_manager_box {
+    width: 100%;
+    padding: 20px;
+    height: fit-content;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    border-bottom: 5px solid #28282B;
+}
+
+    .notices_manager_box > * {
+        padding: 10px;
+    }
+
+.notices_table {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+    .notices_table th, td {
+        padding: 15px;
+    }
+
+    .notices_table th {
+        font-size: 13px;
+        border: none;
+        text-align: left;
+        font-weight: normal;
+        background: #28282B;
+        color: white;
+    }
+
+    .notices_table td, tr {
+        font-size: 13px;
+        border: none;
+        font-weight: normal;
+    }
+
+    .notices_table tr {
+        background: gainsboro;
+    }
+
+.notice_status {
+    padding: 5px;
+    background: grey;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#adminBoxCloser {
+    position: absolute;
+    height: fit-content;
+    top: 10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    right: 10px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.notice_adder_box {
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    width: fit-content;
+    justify-content: space-between;
+    gap: 10px;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+    .notice_adder_box:hover {
+        background: gainsboro;
+    }
+
+    .notice_adder_box img {
+        height: 20px;
+    }
+
+    .notice_adder_box p {
+        font-size: 15px;
+    }
+
+.notice_maker_box {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main_notice_editor_box {
+    background-color: white;
+    padding: 30px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    background-color: #FFFFF0;
+    border-radius: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 1px solid gainsboro;
+}
+
+    .main_notice_editor_box > * {
+        padding: 5px !important;
+    }
+
+.notice_adder {
+    height: 50px;
+    width: 300px;
+    background-color: gainsboro;
+    border: none;
+    padding-left: 3%;
+    border-radius: 5px;
+    outline: none;
+}
+
+.notice_poster {
+    height: 40px;
+    width: 100px;
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.notice_adder_tag {
+    font-size: 21px;
+}
+
+.circular_manager {
+    padding: 40px;
+}
+
+.circular_box {
+    font-size: 20px;
+}
+
+.circular_box_2 {
+    font-size: 20px;
+}
+
+.notice_container {
+    width: 100%;
+    height: fit-content;
+}
+
+    .notice_container .main_notice {
+        padding: 20px;
+        user-select: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: white;
+        height: fit-content;
+        width: fit-content;
+        max-width: 500px;
+        border-radius: 10px;
+        border: 1px solid gainsboro;
+    }
+
+.main_notice .notice_content {
+    font-size: 15px;
+}
+
+.main_notice .notice_def {
+    font-size: 15px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    line-height: 25px;
+    max-width: 100%;
+}
+
+.parent_notice {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    scroll-behavior: smooth; /* optional */
+}
+
+    .parent_notice::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+
+.main_notice .notice_content_head {
+    font-size: 22px;
+}
+
+.null_denoter {
+    font-size: 15px;
+}
+
+.notices_collection {
+    width: 100%;
+    background: #FAF9F6;
+    border: 1px solid gainsboro;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    height: fit-content;
+    scrollbar-width: thin;
+}
+
+    .notices_collection::-webkit-scrollbar {
+    }
+
+#bulletin_board {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.main_notice_item {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.main-notice-container {
+    padding: 10px;
+}
+
+.main-notice-item {
+    padding: 10px;
+}
+
+.calendar_date {
+    height: 100px;
+    ;
+    border-radius: 15px;
+    min-width: 80px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    padding: 25px;
+    background: #2E8B57;
+}
+
+.notice_child {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content_container {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.notice_bar, .third_section {
+}
+
+.dots_parent {
+    padding: 3px;
+}
+
+.picture_cover {
+    padding: 5px;
+    width: 500px;
+}
+
+.error_container {
+    height: 20px;
+    padding: 10px;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+
+    .error_container img {
+        height: 15px;
+    }
+
+.cards_body p {
+    padding: 10px;
+}
+
+.managing_table_container {
+}
+
+.null_notice_container p {
+    font-size: 18px;
+    padding: 5px;
+}
+
+#phone_menu {
+    height: 35px;
+    padding: 5px;
+    display: none;
+}
+
+#phone_nav_area {
+    display: none;
+}
+
+#phone_nav_area {
+    width: 100%;
+    background: white;
+    position: absolute;
+    z-index: 1000;
+    height: fit-content;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    bottom: 0;
+    border-top: 1px solid gainsboro;
+}
+
+.bottom_bar_item img {
+    height: 20px;
+}
+
+.bottom_bar_item {
+    justify-content: center;
+    align-content: center;
+    width: fit-content;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#platform_selector {
+    width: 40%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: gainsboro;
+}
+
+.image-container {
+    width: 100%;
+    justify-content: space-between;
+}

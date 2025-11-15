@@ -1,0 +1,6 @@
+C:\Users\Khuth\source\repos\KH GROUP OF SCHOOLS\KH GROUP OF SCHOOLS\obj\Debug\KH GROUP OF SCHOOLS.njsproj.AssemblyReference.cache
+C:\Users\Khuth\source\repos\KH GROUP OF SCHOOLS\KH GROUP OF SCHOOLS\obj\Debug\KH GROUP OF SCHOOLS.njsproj.CoreCompileInputs.cache
+C:\Users\Khuth\source\repos\KH GROUP OF SCHOOLS\KH GROUP OF SCHOOLS\bin\Microsoft.NodejsTools.WebRole.dll
+D:\Nexora Solutions\KH Group of Schools ( April - June 2025)\KH GROUP OF SCHOOLS - BACKUP(30-05-2025)\KH GROUP OF SCHOOLS\obj\Debug\KH GROUP OF SCHOOLS.njsproj.AssemblyReference.cache
+D:\Nexora Solutions\KH Group of Schools ( April - June 2025)\KH GROUP OF SCHOOLS - BACKUP(30-05-2025)\KH GROUP OF SCHOOLS\obj\Debug\KH GROUP OF SCHOOLS.njsproj.CoreCompileInputs.cache
+D:\Nexora Solutions\KH Group of Schools ( April - June 2025)\KH GROUP OF SCHOOLS - BACKUP(30-05-2025)\KH GROUP OF SCHOOLS\bin\Microsoft.NodejsTools.WebRole.dll
