@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
-const uri = "mongodb+srv://swizzcodes929:KEbltwiStrEZVPFG@khschools.vzxrubo.mongodb.net/";
+const uri = "mongodb://localhost:27017/";
 const dbName = "kh_schools";
 const client = new MongoClient(uri);
 
